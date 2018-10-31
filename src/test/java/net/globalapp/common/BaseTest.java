@@ -50,6 +50,10 @@ public abstract class BaseTest {
 		String bodyText = browser.findElement(By.tagName(tagName)).getText();
 		Assert.assertTrue(valor, bodyText.contains(bodyText));
 	}
+	protected void esperarEstosSegundos(int segundos) {
+		browser.manage().timeouts().implicitlyWait(segundos, TimeUnit.SECONDS);
+	}
+
 
 	protected String tomarCapturaDePantallaYGuardelaComo(String nombreDeArchivo) throws IOException {
 		String appAbsulotePath = new File(".").getAbsolutePath();
